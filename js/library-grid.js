@@ -16,7 +16,8 @@
     }
 
     function tryFormat(index, ext) {
-      const src = '/images/library/' + index + ext;
+      // GitHub Pages 部署到子目录时，必须使用相对路径；避免 `/images/...` 指向站点根目录
+      const src = 'images/library/' + index + ext;
       const img = new Image();
       img.loading = 'lazy';
       img.alt = '作品 ' + index;
