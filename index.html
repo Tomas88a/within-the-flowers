@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>我的作品 | 个人艺术网站</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 背景视频：固定、循环，不随页面滚动；视频文件放在 videos/ 并修改下面 src -->
+  <div class="bg-video-wrap" aria-hidden="true">
+    <video id="bgVideo" class="bg-video" autoplay muted loop playsinline>
+      <source src="videos/background.mp4" type="video/mp4">
+      <source src="videos/background.webm" type="video/webm">
+    </video>
+    <div class="bg-video-overlay"></div>
+  </div>
+
+  <!-- 页面中央：标题图 + 右下角 slogan + 左下角四按钮（图1排版） -->
+  <section class="title-section" aria-label="标题">
+    <div class="title-wrapper">
+      <div class="title-block">
+        <img src="images/title.png" alt="Within The Flowers" class="title-img">
+        <img src="images/slogan.png" alt="Bloom as witness, Petal as gaze. Root as memory, Sky as phase." class="slogan-img">
+      </div>
+      <nav class="nav-buttons" aria-label="导航">
+        <a href="story.html" class="nav-btn"><img src="images/buttons/story.png" alt="Story"></a>
+        <a href="video.html" class="nav-btn"><img src="images/buttons/video.png" alt="Video"></a>
+        <a href="library.html" class="nav-btn"><img src="images/buttons/library.png" alt="Library"></a>
+        <a href="game.html" class="nav-btn"><img src="images/buttons/game.png" alt="Game"></a>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 右下角：背景视频声音 开/关（仅图标） -->
+  <button type="button" class="sound-toggle" id="soundToggle" title="开启/关闭背景视频声音" aria-label="背景视频声音">
+    <span class="sound-icon" aria-hidden="true">🔇</span>
+  </button>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

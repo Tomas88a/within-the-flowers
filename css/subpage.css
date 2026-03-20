@@ -1,0 +1,316 @@
+@font-face {
+  font-family: 'Kingthings Trypewriter 2';
+  src: url('../fonts/Kingthings-Trypewriter-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* 全屏固定背景视频 */
+.subpage-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* 左上角返回按钮 */
+.subpage-back {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.subpage-back:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: scale(1.05);
+}
+
+/* 通用内容区（四个子页面共用） */
+.subpage-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5rem 2rem 3rem;
+}
+
+.subpage-title-img {
+  display: block;
+  max-width: 70%;
+  height: auto;
+  max-height: 28vh;
+  margin: 1.5rem auto 2.5rem;
+}
+
+/* Library：标题靠上 + 自适应作品网格 */
+.library-content {
+  justify-content: flex-start;
+}
+
+.library-content .subpage-title-img {
+  max-width: 50%;
+  max-height: 20vh;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.library-grid {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 2.5rem;
+}
+
+.library-item {
+  position: relative;
+  padding-top: 56.25%; /* 16:9 高宽比 */
+}
+
+.library-item-inner {
+  position: absolute;
+  inset: 0;
+  border: 4px solid #4a4a4a; /* 深灰色外框 */
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.library-item-inner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* 覆盖通用 subpage-content / 标题样式，确保 Library 标题在更上方 */
+main.library-content {
+  justify-content: flex-start;
+  padding-top: 3.5rem;
+}
+
+main.library-content .subpage-title-img {
+  max-width: 45%;
+  max-height: 18vh;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Story：左右两列文本，自适应布局 */
+.story-layout {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem; /* 列间距更大 */
+}
+
+.story-column {
+  flex: 0 0 40%; /* 每列大约占 40% 宽度，更靠左右 */
+  padding: 0 0.75rem;
+  color: #f5e3d0;
+  font-family: 'Kingthings Trypewriter 2', monospace;
+  font-size: 2.1rem;  /* 字号约为之前的两倍 */
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+/* 窄屏时：右列到下方，两列居中 */
+@media (max-width: 900px) {
+  .story-layout {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .story-column {
+    flex: 0 0 auto;
+    max-width: min(90vw, 40rem);
+    padding: 0;
+    font-size: 1.4rem; /* 窄屏下适当缩小一点，保持可读性 */
+  }
+}
+
+@font-face {
+  font-family: 'Kingthings Trypewriter 2';
+  src: url('../fonts/Kingthings-Trypewriter-2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.subpage-bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.subpage-back {
+  position: fixed;
+  top: 1.25rem;
+  left: 1.25rem;
+  z-index: 50;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.subpage-back:hover {
+  background: rgba(0, 0, 0, 0.75);
+  transform: scale(1.05);
+}
+
+.subpage-content {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem 3rem;
+}
+
+.subpage-title-img {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  max-height: 40vh;
+  margin: 1.5rem auto 2.5rem;
+}
+
+/* Story ??:??????,???? */
+.story-layout {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  gap: 2rem;
+}
+
+.story-column {
+  flex: 1 1 0;
+  padding-right: 0.75rem;
+  color: #f5e3d0;
+  font-family: 'Kingthings Trypewriter 2', monospace;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+/* B站视频预览（点击后加载 iframe 播放器） */
+.bilibili-section {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bilibili-preview-card {
+  width: min(1000px, 92vw);
+  border: 4px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.12);
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+.bilibili-preview-cover {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.bilibili-play-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.25);
+  pointer-events: none;
+}
+
+.bilibili-player-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.bilibili-play-triangle {
+  color: rgba(245, 227, 208, 0.95);
+  font-size: 3.25rem;
+  line-height: 1;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(0.05em);
+}
+
+.bilibili-preview-hint {
+  margin: 0;
+  color: rgba(245, 227, 208, 0.9);
+  font-size: 1rem;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.bilibili-preview-card:focus {
+  outline: 3px solid rgba(245, 227, 208, 0.8);
+  outline-offset: 3px;
+}
+

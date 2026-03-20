@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video | Within The Flowers</title>
+  <link rel="stylesheet" href="css/subpage.css">
+</head>
+<body>
+  <video class="subpage-bg-video" muted playsinline preload="auto">
+    <source src="videos/video-bg.mp4" type="video/mp4">
+    <source src="videos/video-bg.webm" type="video/webm">
+  </video>
+  <a href="index.html" class="subpage-back" title="返回主界面" aria-label="返回主界面">←</a>
+  <main class="subpage-content">
+    <img src="images/pages/video-title.png" alt="Video" class="subpage-title-img">
+    <!-- B站视频预览：点击后才加载播放器 -->
+    <section class="bilibili-section" aria-label="B站视频预览">
+      <div
+        id="bilibiliPreview"
+        class="bilibili-preview-card"
+        role="button"
+        tabindex="0"
+        aria-label="点击播放视频"
+        data-bvid="BV1F3Anz7EPG"
+        data-cover=""
+      >
+        <img
+          class="bilibili-preview-cover"
+          src="images/pages/video-title.png"
+          alt="视频预览封面"
+          loading="eager"
+        >
+        <div class="bilibili-play-overlay" aria-hidden="true">
+          <span class="bilibili-play-triangle">▶</span>
+        </div>
+      </div>
+      <p id="bilibiliPreviewHint" class="bilibili-preview-hint" aria-live="polite">
+        请把你的 `bvid` 填到这里（`video.html` 的 `data-bvid`），或打开 `video.html?bvid=BV...`。
+        <br>
+        长期封面：把图片命名为 `images/pages/video-cover.png` 放入项目中即可自动生效。
+      </p>
+    </section>
+  </main>
+  <script src="js/subpage.js"></script>
+  <script src="js/bilibili-player.js"></script>
+</body>
+</html>
